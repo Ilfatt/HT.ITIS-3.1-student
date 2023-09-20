@@ -40,8 +40,3 @@ services:
     
   dotnet_storage:
     image: dotnet-web
-  dotnet.homeworks.mainproject:
-    image: dotnet.homeworks.mainproject
-    build:
-      context: .
-      dockerfile: Dotnet.Homeworks.MainProject/Dockerfile
