@@ -8,8 +8,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
-builder.Services.AddMasstransitRabbitMq
-    (builder.Configuration.GetSection("RabbitMqConfig").Get<RabbitMqConfig>()!);
+builder.Services.AddMasstransitRabbitMq(builder.Configuration);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 builder.Configuration.AddEnvironmentVariables();

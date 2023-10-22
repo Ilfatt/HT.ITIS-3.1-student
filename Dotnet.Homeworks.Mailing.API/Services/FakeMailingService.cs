@@ -1,18 +1,15 @@
 ﻿using Dotnet.Homeworks.Mailing.API.Configuration;
 using Dotnet.Homeworks.Mailing.API.Dto;
 using Dotnet.Homeworks.Shared.Dto;
-using MailKit.Net.Smtp;
-using MailKit.Security;
 using Microsoft.Extensions.Options;
-using MimeKit;
 
 namespace Dotnet.Homeworks.Mailing.API.Services;
 
-public class FakeMalingService : IMailingService
+public class FakeMailingService : IMailingService
 {
     private readonly EmailConfig _emailConfig;
 
-    public FakeMalingService(IOptions<EmailConfig> emailConfig)
+    public FakeMailingService(IOptions<EmailConfig> emailConfig)
     {
         _emailConfig = emailConfig.Value;
     }
