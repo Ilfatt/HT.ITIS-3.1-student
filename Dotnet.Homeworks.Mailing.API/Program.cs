@@ -8,7 +8,7 @@ builder.Services.AddMasstransitRabbitMq
     (builder.Configuration.GetSection("RabbitMqConfig").Get<RabbitMqConfig>()!);
 builder.Services.Configure<EmailConfig>(builder.Configuration.GetSection("EmailConfig"));
 
-builder.Services.AddScoped<IMailingService, MailingService>();
+builder.Services.AddScoped<IMailingService, FakeMalingService>();
 
 var app = builder.Build();
 
