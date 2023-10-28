@@ -1,12 +1,14 @@
 using Dotnet.Homeworks.Data.DatabaseContext;
-using Dotnet.Homeworks.MainProject.Helpers;
 using Dotnet.Homeworks.MainProject.Services;
 using Dotnet.Homeworks.MainProject.ServicesExtensions.Masstransit;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using Dotnet.Homeworks.DataAccess.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddControllers();
+builder.Services.RegisterRepositories();
 
 builder.Services.AddMasstransitRabbitMq(builder.Configuration);
 builder.Services.AddDbContext<AppDbContext>(options =>
