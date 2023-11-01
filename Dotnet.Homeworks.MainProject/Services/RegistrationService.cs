@@ -16,8 +16,12 @@ public class RegistrationService : IRegistrationService
     {
         // pretending we have some complex logic here
         await Task.Delay(100);
-        
+
         // publish message to a queue
-        await _communicationService.SendEmailAsync(new SendEmail("", "", "", ""));
+        await _communicationService.SendEmailAsync(
+            new SendEmail(userDto.Name,
+                userDto.Email,
+                "User was create!",
+                "User was create!"));
     }
 }
